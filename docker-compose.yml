@@ -1,0 +1,94 @@
+version: "3.9"
+
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: services/api-gateway/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - ELECTION_SERVICE_URL=http://election-service:3001
+      - IDENTITY_SERVICE_URL=http://identity-service:3002
+      - ZK_PROOF_SERVICE_URL=http://zk-proof-service:3003
+      - TALLY_SERVICE_URL=http://tally-service:3004
+    depends_on:
+      - election-service
+      - identity-service
+      - zk-proof-service
+      - tally-service
+    networks:
+      - veritas-net
+
+  election-service:
+    build:
+      context: .
+      dockerfile: services/election-service/Dockerfile
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
+      - STELLAR_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
+      - STELLAR_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
+    networks:
+      - veritas-net
+
+  identity-service:
+    build:
+      context: .
+      dockerfile: services/identity-service/Dockerfile
+    ports:
+      - "3002:3002"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - PORT=3002
+      - STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
+      - MONEYGRAM_SIGNING_KEY=${MONEYGRAM_SIGNING_KEY}
+      - CIRCLE_SIGNING_KEY=${CIRCLE_SIGNING_KEY}
+      - STELLAR_ANCHOR_SIGNING_KEY=${STELLAR_ANCHOR_SIGNING_KEY}
+    networks:
+      - veritas-net
+
+  zk-proof-service:
+    build:
+      context: .
+      dockerfile: services/zk-proof-service/Dockerfile
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=development
+      - PORT=3003
+      - PROVER_WASM_PATH=/app/prover/vote_circuit.wasm
+      - PROVER_KEY_PATH=/app/prover/proving_key.bin
+    networks:
+      - veritas-net
+
+  tally-service:
+    build:
+      context: .
+      dockerfile: services/tally-service/Dockerfile
+    ports:
+      - "3004:3004"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - PORT=3004
+      - STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
+      - STELLAR_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
+      - THRESHOLD_M=3
+      - THRESHOLD_N=5
+    networks:
+      - veritas-net
+
+networks:
+  veritas-net:
+    driver: bridge

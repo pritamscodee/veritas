@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model KeyHolder {
+  id          String   @id @default(uuid())
+  holderId    String   @unique
+  publicKey   String
+  shareIndex  Int
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model DecryptionShare {
+  id          String   @id @default(uuid())
+  holderId    String
+  electionId  String
+  share       String
+  submittedAt DateTime @default(now())
+
+  @@unique([holderId, electionId])
+  @@index([electionId])
+}
+
+model TallyResult {
+  id              String   @id @default(uuid())
+  electionId      String   @unique
+  results         Json
+  totalVotes      Int
+  quorumReached   Boolean
+  decryptedAt     DateTime @default(now())
+  txHash          String?
+
+  @@index([electionId])
+}
+
+model ThresholdConfig {
+  id          String @id @default(uuid())
+  key         String @unique
+  value       String
+  updatedAt   DateTime @updatedAt
+}

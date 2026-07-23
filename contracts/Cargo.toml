@@ -1,0 +1,23 @@
+[workspace]
+members = [
+    "voting_registry",
+    "identity_anchor",
+    "vote_circuit",
+    "tally_contract",
+]
+resolver = "2"
+
+[workspace.dependencies]
+soroban-sdk = "20.0.0"
+soroban-auth-sdk = "20.0.0"
+stellar-xdr = { version = "20.0.0", default-features = false, features = ["std", "serde"] }
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = 0
+strip = "symbols"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+lto = true

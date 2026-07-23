@@ -1,0 +1,5 @@
+-- No local init needed — using Neon DB
+-- Run Prisma migrations against the Neon DATABASE_URL directly:
+--   npx prisma migrate dev --schema=services/election-service/prisma/schema.prisma
+--   npx prisma migrate dev --schema=services/identity-service/prisma/schema.prisma
+--   npx prisma migrate dev --schema=services/tally-service/prisma/schema.prisma

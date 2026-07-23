@@ -1,0 +1,26 @@
+{
+  "name": "veritas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Decentralized one-person-one-vote governance on Stellar",
+  "workspaces": [
+    "services/*",
+    "shared/*",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:gateway\" \"npm run dev:election\" \"npm run dev:identity\" \"npm run dev:zk-proof\" \"npm run dev:tally\" \"npm run dev:frontend\"",
+    "dev:gateway": "npm run dev --workspace=services/api-gateway",
+    "dev:election": "npm run dev --workspace=services/election-service",
+    "dev:identity": "npm run dev --workspace=services/identity-service",
+    "dev:zk-proof": "npm run dev --workspace=services/zk-proof-service",
+    "dev:tally": "npm run dev --workspace=services/tally-service",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

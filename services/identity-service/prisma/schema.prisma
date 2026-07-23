@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AnchorRegistration {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  signingKey  String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model KYCAttestation {
+  id              String   @id @default(uuid())
+  accountId       String
+  anchorName      String
+  kycLevel        Int
+  credentialHash  String
+  signature       String
+  issuedAt        DateTime
+  expiresAt       DateTime
+  isRevoked       Boolean  @default(false)
+  verifiedAt      DateTime?
+  createdAt       DateTime @default(now())
+
+  @@unique([accountId, anchorName])
+  @@index([accountId])
+  @@index([anchorName])
+}
+
+model VotingCredential {
+  id              String   @id @default(uuid())
+  accountId       String
+  electionId      String
+  credentialHash  String
+  isUsed          Boolean  @default(false)
+  issuedAt        DateTime @default(now())
+  usedAt          DateTime?
+  txHash          String?
+
+  @@unique([accountId, electionId])
+  @@index([accountId])
+  @@index([electionId])
+}
+
+model AttestationIndex {
+  id              String   @id @default(uuid())
+  accountId       String
+  anchorName      String
+  kycLevel        Int
+  lastCheckedAt   DateTime @default(now())
+  attestationHash String
+
+  @@index([accountId])
+}

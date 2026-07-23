@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+generated/
+.env
+.env.local
+target/
+*.wasm
+.DS_Store
+*.log
