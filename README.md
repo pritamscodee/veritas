@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
- <img width="1907" height="912" alt="image" src="https://github.com/user-attachments/assets/f4088cf8-d22f-4cdc-b3eb-8c0fe2b67f43" />
+<img width="1911" height="870" alt="image" src="https://github.com/user-attachments/assets/330ac269-40b3-4da6-b584-33a5bd84abb3" />
+
 
   <br>
  <img width="1835" height="840" alt="image" src="https://github.com/user-attachments/assets/2a27a0e0-cff9-4e25-9c20-c92ddb08aeb5" />
