@@ -1,0 +1,80 @@
+services:
+  # API Gateway
+  - type: web
+    name: veritas-api-gateway
+    runtime: node
+    plan: free
+    buildCommand: cd services/api-gateway && npm install && npm run build
+    startCommand: cd services/api-gateway && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: ELECTION_SERVICE_URL
+        syncFromDatabase: false
+        value: https://veritas-election-service.onrender.com
+      - key: IDENTITY_SERVICE_URL
+        value: https://veritas-identity-service.onrender.com
+      - key: ZK_PROOF_SERVICE_URL
+        value: https://veritas-zk-proof-service.onrender.com
+      - key: TALLY_SERVICE_URL
+        value: https://veritas-tally-service.onrender.com
+
+  # Election Service
+  - type: web
+    name: veritas-election-service
+    runtime: node
+    plan: free
+    buildCommand: cd services/election-service && npm install && npx prisma generate && npm run build
+    startCommand: cd services/election-service && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: DATABASE_URL
+        sync: false
+
+  # Identity Service
+  - type: web
+    name: veritas-identity-service
+    runtime: node
+    plan: free
+    buildCommand: cd services/identity-service && npm install && npx prisma generate && npm run build
+    startCommand: cd services/identity-service && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3002
+      - key: DATABASE_URL
+        sync: false
+
+  # ZK Proof Service
+  - type: web
+    name: veritas-zk-proof-service
+    runtime: node
+    plan: free
+    buildCommand: cd services/zk-proof-service && npm install && npm run build
+    startCommand: cd services/zk-proof-service && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3003
+
+  # Tally Service
+  - type: web
+    name: veritas-tally-service
+    runtime: node
+    plan: free
+    buildCommand: cd services/tally-service && npm install && npx prisma generate && npm run build
+    startCommand: cd services/tally-service && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3004
+      - key: DATABASE_URL
+        sync: false

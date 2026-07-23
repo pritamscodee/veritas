@@ -10,7 +10,6 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@veritas/types": "*",
     "@stellar/stellar-sdk": "^12.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
