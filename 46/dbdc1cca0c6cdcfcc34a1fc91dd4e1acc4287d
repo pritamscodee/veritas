@@ -1,0 +1,24 @@
+frontend/src/App.tsx
+  s_0a01ec323f160d::t_773cbaa3cfe9e5 18,27-28
+frontend/src/components/Navbar.tsx
+  s_0a01ec323f160d::t_0415c96236d5d4 2,10-11,25,59-63,72-93
+frontend/src/hooks/useVeritas.ts
+  s_0a01ec323f160d::t_6ad3fdc010e8bf 80-82,86-87,89-91,93,96-97,99-101,105,109,112
+  s_0a01ec323f160d::t_9a1dd04998998a 94-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "46dbdc1cca0c6cdcfcc34a1fc91dd4e1acc4287d",
+  "prompts": {},
+  "sessions": {
+    "s_0a01ec323f160d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07195004bffesRrRP5mUopXtgD",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
