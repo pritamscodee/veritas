@@ -62,26 +62,8 @@ export const THRESHOLD = {
   N: 5,
 } as const;
 
-export function getEnvConfig() {
-  return {
-    SERVICE_URLS: {
-      ELECTION: process.env.ELECTION_SERVICE_URL || SERVICE_URLS.ELECTION,
-      IDENTITY: process.env.IDENTITY_SERVICE_URL || SERVICE_URLS.IDENTITY,
-      ZK_PROOF: process.env.ZK_PROOF_SERVICE_URL || SERVICE_URLS.ZK_PROOF,
-      TALLY: process.env.TALLY_SERVICE_URL || SERVICE_URLS.TALLY,
-    },
-    STELLAR: {
-      HORIZON_URL: process.env.STELLAR_HORIZON_URL || STELLAR.HORIZON_URL,
-      SOROBAN_RPC_URL: process.env.STELLAR_SOROBAN_RPC_URL || STELLAR.SOROBAN_RPC_URL,
-      NETWORK_PASSPHRASE: process.env.STELLAR_NETWORK_PASSPHRASE || STELLAR.NETWORK_PASSPHRASE,
-    },
-    JWT: {
-      SECRET: process.env.JWT_SECRET || JWT.SECRET,
-      EXPIRES_IN: JWT.EXPIRES_IN,
-    },
-    THRESHOLD: {
-      M: parseInt(process.env.THRESHOLD_M || String(THRESHOLD.M)),
-      N: parseInt(process.env.THRESHOLD_N || String(THRESHOLD.N)),
-    },
-  };
-}
+export const ANCHOR_SIGNING_KEYS = {
+  MONEYGRAM: "",
+  CIRCLE: "",
+  STELLAR_ANCHOR: "",
+} as const;

@@ -1,7 +1,10 @@
 import prisma from "../models/prisma";
-import { getEnvConfig } from "@veritas/constants";
+import { THRESHOLD as DEFAULT_THRESHOLD } from "@veritas/constants";
 
-const { THRESHOLD } = getEnvConfig();
+const THRESHOLD = {
+  M: parseInt(process.env.THRESHOLD_M || String(DEFAULT_THRESHOLD.M)),
+  N: parseInt(process.env.THRESHOLD_N || String(DEFAULT_THRESHOLD.N)),
+};
 
 export class ThresholdDecryption {
   private thresholdM: number;

@@ -1,29 +1,26 @@
 import * as StellarSdk from "stellar-sdk";
 import type { AnchorKYCAttestation } from "@veritas/types";
+import { STELLAR, ANCHOR_SIGNING_KEYS } from "@veritas/constants";
 
-function getHorizonUrl(): string {
-  return process.env.STELLAR_HORIZON_URL || "https://horizon-testnet.stellar.org";
-}
-
-function getRpcUrl(): string {
-  return process.env.STELLAR_SOROBAN_RPC_URL || "https://soroban-testnet.stellar.org";
-}
-
-function getNetworkPassphrase(): string {
-  return process.env.STELLAR_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015";
-}
+const HORIZON_URL = STELLAR.HORIZON_URL;
+const SOROBAN_RPC_URL = STELLAR.SOROBAN_RPC_URL;
+const NETWORK_PASSPHRASE = STELLAR.NETWORK_PASSPHRASE;
 
 let _server: StellarSdk.Horizon.Server | null = null;
 let _sorobanRpc: StellarSdk.SorobanRpc.Server | null = null;
 
 export function getServer(): StellarSdk.Horizon.Server {
-  if (!_server) _server = new StellarSdk.Horizon.Server(getHorizonUrl());
+  if (!_server) _server = new StellarSdk.Horizon.Server(HORIZON_URL);
   return _server;
 }
 
 export function getSorobanRpc(): StellarSdk.SorobanRpc.Server {
-  if (!_sorobanRpc) _sorobanRpc = new StellarSdk.SorobanRpc.Server(getRpcUrl());
+  if (!_sorobanRpc) _sorobanRpc = new StellarSdk.SorobanRpc.Server(SOROBAN_RPC_URL);
   return _sorobanRpc;
+}
+
+export function getNetworkPassphrase(): string {
+  return NETWORK_PASSPHRASE;
 }
 
 export async function verifyKYCAttestation(attestation: AnchorKYCAttestation): Promise<boolean> {
@@ -32,8 +29,7 @@ export async function verifyKYCAttestation(attestation: AnchorKYCAttestation): P
     const account = await server.loadAccount(attestation.accountId);
     const signers = account.signers;
 
-    const trustedAnchors = getTrustedAnchors();
-    const anchorKey = trustedAnchors[attestation.anchor];
+    const anchorKey = ANCHOR_SIGNING_KEYS[attestation.anchor];
     if (!anchorKey) return false;
 
     const isValid = signers.some((s) => s.key === anchorKey && s.weight >= 1);
@@ -46,11 +42,7 @@ export async function verifyKYCAttestation(attestation: AnchorKYCAttestation): P
 }
 
 export function getTrustedAnchors(): Record<string, string> {
-  return {
-    moneygram: process.env.MONEYGRAM_SIGNING_KEY || "",
-    circle: process.env.CIRCLE_SIGNING_KEY || "",
-    stellar_anchor: process.env.STELLAR_ANCHOR_SIGNING_KEY || "",
-  };
+  return { ...ANCHOR_SIGNING_KEYS };
 }
 
 export async function submitTransaction(

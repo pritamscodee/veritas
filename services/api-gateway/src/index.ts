@@ -5,13 +5,18 @@ import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import { createProxyMiddleware, Options } from "http-proxy-middleware";
 import dotenv from "dotenv";
-import { getEnvConfig, RATE_LIMIT, SERVICE_PORTS } from "@veritas/constants";
+import { RATE_LIMIT, SERVICE_PORTS, SERVICE_URLS as DEFAULT_SERVICE_URLS } from "@veritas/constants";
 
 dotenv.config();
 
 const app = express();
 const PORT = SERVICE_PORTS.API_GATEWAY;
-const SERVICE_URLS = getEnvConfig().SERVICE_URLS;
+const SERVICE_URLS = {
+  ELECTION: process.env.ELECTION_SERVICE_URL || DEFAULT_SERVICE_URLS.ELECTION,
+  IDENTITY: process.env.IDENTITY_SERVICE_URL || DEFAULT_SERVICE_URLS.IDENTITY,
+  ZK_PROOF: process.env.ZK_PROOF_SERVICE_URL || DEFAULT_SERVICE_URLS.ZK_PROOF,
+  TALLY: process.env.TALLY_SERVICE_URL || DEFAULT_SERVICE_URLS.TALLY,
+};
 
 // --- Middleware ---
 app.use(helmet());
