@@ -24,6 +24,7 @@
     "node": ">=20.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.0.0",
     "concurrently": "^8.2.2"
   }
 }
