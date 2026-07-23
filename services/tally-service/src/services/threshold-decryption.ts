@@ -1,5 +1,7 @@
 import prisma from "../models/prisma";
-import { THRESHOLD } from "@veritas/constants";
+import { getEnvConfig } from "@veritas/constants";
+
+const { THRESHOLD } = getEnvConfig();
 
 export class ThresholdDecryption {
   private thresholdM: number;

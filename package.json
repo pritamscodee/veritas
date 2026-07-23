@@ -17,6 +17,7 @@
     "dev:tally": "npm run dev --workspace=services/tally-service",
     "dev:frontend": "npm run dev --workspace=frontend",
     "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build --workspace=shared/types && npm run build --workspace=shared/constants && npm run build --workspace=shared/stellar",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present"
   },
