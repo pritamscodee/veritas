@@ -1,0 +1,19 @@
+.dockerignore
+  s_13f3e75b576736::t_68fd2dcac064ed 1-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e6561841148f280bc61dd30befbe9abd8076ff2a",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
