@@ -1,0 +1,25 @@
+shared/constants/package.json
+  s_13f3e75b576736::t_97de2f41319de5 12
+.nvmrc
+  s_13f3e75b576736::t_974ba62b57fdc3 1
+package.json
+  s_13f3e75b576736::t_0d5869ca424280 23-25
+shared/stellar/package.json
+  s_13f3e75b576736::t_d28154e022ce58 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "795d03e38172d3d5ed4e8b56f6c1a788cc9354d2",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
