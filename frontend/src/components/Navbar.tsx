@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Vote, BarChart3, PlusCircle, Activity, Coins, Layers, ArrowLeftRight, Boxes, Globe } from "lucide-react";
+import { Shield, Vote, BarChart3, PlusCircle, Activity, Coins, Layers, ArrowLeftRight, Boxes, Globe, Download, AlertCircle } from "lucide-react";
 import { cn, formatAddress } from "@/lib/utils";
 
 interface NavbarProps {
@@ -7,6 +7,8 @@ interface NavbarProps {
   onConnect: () => void;
   onDisconnect: () => void;
   connecting: boolean;
+  error?: string | null;
+  isFreighterAvailable?: boolean;
 }
 
 const navLinks = [
@@ -20,7 +22,7 @@ const navLinks = [
   { to: "/health", label: "Status", icon: Activity },
 ];
 
-export default function Navbar({ accountId, onConnect, onDisconnect, connecting }: NavbarProps) {
+export default function Navbar({ accountId, onConnect, onDisconnect, connecting, error, isFreighterAvailable }: NavbarProps) {
   const location = useLocation();
 
   return (
@@ -54,6 +56,11 @@ export default function Navbar({ accountId, onConnect, onDisconnect, connecting 
         <div className="flex items-center gap-3">
           {accountId ? (
             <div className="flex items-center gap-3">
+              {!isFreighterAvailable && (
+                <span className="hidden rounded-full bg-amber-500/20 px-2 py-1 text-[10px] text-amber-400 sm:block">
+                  DEMO
+                </span>
+              )}
               <span className="hidden rounded-full bg-white/10 px-3 py-1 text-xs font-mono text-white/70 sm:block">
                 {formatAddress(accountId)}
               </span>
@@ -62,9 +69,28 @@ export default function Navbar({ accountId, onConnect, onDisconnect, connecting 
               </button>
             </div>
           ) : (
-            <button onClick={onConnect} disabled={connecting} className="btn-stellar">
-              {connecting ? "Connecting..." : "Connect Wallet"}
-            </button>
+            <div className="flex flex-col items-end gap-1">
+              {!isFreighterAvailable && (
+                <a
+                  href="https://www.freighter.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[10px] text-stellar-blue hover:underline"
+                >
+                  <Download className="h-3 w-3" />
+                  Install Freighter
+                </a>
+              )}
+              <button onClick={onConnect} disabled={connecting} className="btn-stellar">
+                {connecting ? "Connecting..." : "Connect Wallet"}
+              </button>
+            </div>
+          )}
+          {error && !accountId && (
+            <span className="flex items-center gap-1 text-[10px] text-amber-400">
+              <AlertCircle className="h-3 w-3" />
+              {error.includes("Demo") ? "Demo mode" : error}
+            </span>
           )}
         </div>
       </div>

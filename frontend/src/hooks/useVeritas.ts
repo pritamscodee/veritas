@@ -77,24 +77,37 @@ export function useTallyResult(electionId: string) {
 export function useWallet() {
   const [accountId, setAccountId] = useState<string | null>(null);
   const [connecting, setConnecting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const isFreighterAvailable = typeof window !== "undefined" && !!(window as any).freighter;
 
   const connect = useCallback(async () => {
     setConnecting(true);
+    setError(null);
+
     try {
-      if (typeof window !== "undefined" && (window as any).freighter) {
-        const addr = await (window as any).freighter.getAddress();
+      if (isFreighterAvailable) {
+        const freighter = (window as any).freighter;
+        const addr = await freighter.getAddress();
         setAccountId(addr);
+      } else {
+        // Demo mode: use testnet account
+        const demoAccount = "GDNQWCLQTYJQ2XM2Q2IF6IHWPNNOGNC6YMJOMRAFDGMFQ4PLPX3VTNNL";
+        setAccountId(demoAccount);
+        setError("Demo mode — install Freighter for real wallet connection");
       }
-    } catch {
-      console.log("Freighter not available — using demo mode");
+    } catch (err: any) {
+      console.error("Wallet connection failed:", err);
+      setError(err?.message || "Connection failed");
     } finally {
       setConnecting(false);
     }
-  }, []);
+  }, [isFreighterAvailable]);
 
   const disconnect = useCallback(() => {
     setAccountId(null);
+    setError(null);
   }, []);
 
-  return { accountId, connecting, connect, disconnect };
+  return { accountId, connecting, connect, disconnect, error, isFreighterAvailable };
 }

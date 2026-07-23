@@ -15,7 +15,7 @@ import DeFi from "@/pages/DeFi";
 import { useWallet } from "@/hooks/useVeritas";
 
 export default function App() {
-  const { accountId, connecting, connect, disconnect } = useWallet();
+  const { accountId, connecting, connect, disconnect, error, isFreighterAvailable } = useWallet();
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -24,6 +24,8 @@ export default function App() {
         onConnect={connect}
         onDisconnect={disconnect}
         connecting={connecting}
+        error={error}
+        isFreighterAvailable={isFreighterAvailable}
       />
       <main className="flex-1">
         <Routes>
