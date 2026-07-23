@@ -7,16 +7,16 @@ export const SERVICE_PORTS = {
 } as const;
 
 export const SERVICE_URLS = {
-  ELECTION: process.env.ELECTION_SERVICE_URL || "http://localhost:3001",
-  IDENTITY: process.env.IDENTITY_SERVICE_URL || "http://localhost:3002",
-  ZK_PROOF: process.env.ZK_PROOF_SERVICE_URL || "http://localhost:3003",
-  TALLY: process.env.TALLY_SERVICE_URL || "http://localhost:3004",
+  ELECTION: "http://localhost:3001",
+  IDENTITY: "http://localhost:3002",
+  ZK_PROOF: "http://localhost:3003",
+  TALLY: "http://localhost:3004",
 } as const;
 
 export const STELLAR = {
-  HORIZON_URL: process.env.STELLAR_HORIZON_URL || "https://horizon-testnet.stellar.org",
-  SOROBAN_RPC_URL: process.env.STELLAR_SOROBAN_RPC_URL || "https://soroban-testnet.stellar.org",
-  NETWORK_PASSPHRASE: process.env.STELLAR_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015",
+  HORIZON_URL: "https://horizon-testnet.stellar.org",
+  SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org",
+  NETWORK_PASSPHRASE: "Test SDF Network ; September 2015",
 } as const;
 
 export const KYC_LEVELS = {
@@ -53,11 +53,35 @@ export const RATE_LIMIT = {
 } as const;
 
 export const JWT = {
-  SECRET: process.env.JWT_SECRET || "veritas-dev-secret-change-in-production",
+  SECRET: "veritas-dev-secret-change-in-production",
   EXPIRES_IN: "24h",
 } as const;
 
 export const THRESHOLD = {
-  M: parseInt(process.env.THRESHOLD_M || "3"),
-  N: parseInt(process.env.THRESHOLD_N || "5"),
+  M: 3,
+  N: 5,
 } as const;
+
+export function getEnvConfig() {
+  return {
+    SERVICE_URLS: {
+      ELECTION: process.env.ELECTION_SERVICE_URL || SERVICE_URLS.ELECTION,
+      IDENTITY: process.env.IDENTITY_SERVICE_URL || SERVICE_URLS.IDENTITY,
+      ZK_PROOF: process.env.ZK_PROOF_SERVICE_URL || SERVICE_URLS.ZK_PROOF,
+      TALLY: process.env.TALLY_SERVICE_URL || SERVICE_URLS.TALLY,
+    },
+    STELLAR: {
+      HORIZON_URL: process.env.STELLAR_HORIZON_URL || STELLAR.HORIZON_URL,
+      SOROBAN_RPC_URL: process.env.STELLAR_SOROBAN_RPC_URL || STELLAR.SOROBAN_RPC_URL,
+      NETWORK_PASSPHRASE: process.env.STELLAR_NETWORK_PASSPHRASE || STELLAR.NETWORK_PASSPHRASE,
+    },
+    JWT: {
+      SECRET: process.env.JWT_SECRET || JWT.SECRET,
+      EXPIRES_IN: JWT.EXPIRES_IN,
+    },
+    THRESHOLD: {
+      M: parseInt(process.env.THRESHOLD_M || String(THRESHOLD.M)),
+      N: parseInt(process.env.THRESHOLD_N || String(THRESHOLD.N)),
+    },
+  };
+}
