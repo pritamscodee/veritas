@@ -1,0 +1,162 @@
+docker-compose.yml
+  s_0a01ec323f160d::t_dee44957b69241 50,54-55,70,75-76,105,110-111
+  s_0a01ec323f160d::t_2652a09975e1e2 29
+  s_0a01ec323f160d::t_fc81a6acca0923 115-126
+  s_0a01ec323f160d::t_962dd421998582 35
+  s_0a01ec323f160d::t_5baadad2b435df 133-135
+  s_0a01ec323f160d::t_c0f61214a20566 2-15,112-113
+  s_0a01ec323f160d::t_98bf6aa5e5cd8b 114
+render.yaml
+  s_0a01ec323f160d::t_4926c50f5d2e1b 81-93
+contracts/treasury/src/lib.rs
+  s_0a01ec323f160d::t_d2810892b53bc7 1-63
+shared/stellar/anchors.ts
+  s_0a01ec323f160d::t_7767a703f1f51f 1-93
+contracts/governance_token/Cargo.toml
+  s_0a01ec323f160d::t_9e31c34c0c208b 1-14
+services/api-gateway/src/index.ts
+  s_0a01ec323f160d::t_e3a07ac941b9af 128
+  s_0a01ec323f160d::t_d0a44eb2cb0a3b 19
+  s_0a01ec323f160d::t_87ab2d1cf0db51 97-114,119-124
+services/stellar-service/src/routes/anchors.routes.ts
+  s_0a01ec323f160d::t_2be3e54b9ee283 1,3-62
+  s_0a01ec323f160d::t_e614590035c95e 2,63
+services/zk-proof-service/tsconfig.json
+  s_0a01ec323f160d::t_8329a67f637f0c 19
+services/election-service/Dockerfile
+  s_0a01ec323f160d::t_b013c4da640356 1-4,8-19
+  s_0a01ec323f160d::t_1f3090bff41e3a 5-7
+frontend/src/pages/DeFi.tsx
+  s_0a01ec323f160d::t_0142afccf3b12d 1-92
+services/stellar-service/package.json
+  s_0a01ec323f160d::t_67a1e960080596 1-32
+.github/workflows/deploy.yml
+  s_0a01ec323f160d::t_c6af2ad6ba8ac8 1-88
+shared/stellar/tsconfig.json
+  s_0a01ec323f160d::t_454b15f494b134 17
+services/stellar-service/tsconfig.json
+  s_0a01ec323f160d::t_8329a67f637f0c 7,19
+  s_0a01ec323f160d::t_a77d923bbd4f81 1-6,8-18
+services/tally-service/Dockerfile
+  s_0a01ec323f160d::t_b013c4da640356 1-4,8-19
+  s_0a01ec323f160d::t_1f3090bff41e3a 5-7
+contracts/staking/src/lib.rs
+  s_0a01ec323f160d::t_fa7280a3eb793b 1-92
+shared/stellar/defi.ts
+  s_0a01ec323f160d::t_78c74a7a1e1b0b 33,47-50,73,82,90
+  s_0a01ec323f160d::t_20e403dd0e06cc 1-32,34-46,51-72,74-81,83-89,91-93
+services/stellar-service/src/routes/ramp.routes.ts
+  s_0a01ec323f160d::t_e614590035c95e 2,44
+  s_0a01ec323f160d::t_f60f97da10d386 1,3-43
+package.json
+  s_0a01ec323f160d::t_adfb73c64406e0 12,18
+services/api-gateway/tsconfig.json
+  s_0a01ec323f160d::t_8329a67f637f0c 19
+shared/constants/index.ts
+  s_0a01ec323f160d::t_77971076e7f96b 14
+  s_0a01ec323f160d::t_bf12363a167bc9 70,72-104
+contracts/governance_token/src/lib.rs
+  s_0a01ec323f160d::t_a92ab18cfa7a07 1-101
+frontend/src/App.tsx
+  s_0a01ec323f160d::t_edc011f7cb926c 9-14,35-41
+frontend/src/pages/Assets.tsx
+  s_0a01ec323f160d::t_f228c799aa0755 1-86
+services/stellar-service/Dockerfile
+  s_0a01ec323f160d::t_4156b0832737d8 3,8-9,12,17,19
+  s_0a01ec323f160d::t_21c18331989737 1-2,4-7,10-11,13-16,18
+frontend/src/types/index.ts
+  s_0a01ec323f160d::t_1d10ccc92885b5 65-126
+services/zk-proof-service/Dockerfile
+  s_0a01ec323f160d::t_1f3090bff41e3a 5-7
+  s_0a01ec323f160d::t_b013c4da640356 1-4,8-19
+services/tally-service/tsconfig.json
+  s_0a01ec323f160d::t_8329a67f637f0c 7,19
+services/stellar-service/src/routes/payments.routes.ts
+  s_0a01ec323f160d::t_f279a687fa5aad 1,3-104
+  s_0a01ec323f160d::t_e614590035c95e 2,105
+frontend/tsconfig.tsbuildinfo
+  s_0a01ec323f160d::t_c215f5f46c27fb 1
+services/identity-service/tsconfig.json
+  s_0a01ec323f160d::t_8329a67f637f0c 7,19
+README.md
+  s_0a01ec323f160d::t_e50f3b3d0a3bfe 78-90
+  s_0a01ec323f160d::t_8405fae120f80f 259
+  s_0a01ec323f160d::t_bd52c0cc933d6a 265-302
+  s_0a01ec323f160d::t_1a7d8b7fe75f9d 164-167,173-174,177
+  s_0a01ec323f160d::t_9fb91b7402e062 229-233
+scripts/expose-backend.sh
+  s_0a01ec323f160d::t_caa4a0a7e57ae9 1-10
+shared/stellar/payments.ts
+  s_0a01ec323f160d::t_fb32dac3a8406b 1-125
+shared/stellar/ramp.ts
+  s_0a01ec323f160d::t_823a1e3a0084e0 1-98
+services/stellar-service/src/store.ts
+  s_0a01ec323f160d::t_6c6a6af26c101e 1-63
+frontend/src/pages/Ramp.tsx
+  s_0a01ec323f160d::t_a5155977673c5a 1-92
+frontend/vercel.json
+  s_0a01ec323f160d::t_c6b80cc0550ea7 3
+  s_0a01ec323f160d::t_af1490f25ca477 9
+ngrok.yml
+  s_0a01ec323f160d::t_561e2b3dc2d2bb 1-6
+contracts/Cargo.toml
+  s_0a01ec323f160d::t_0001f53be4ea50 7-9
+services/stellar-service/src/routes/defi.routes.ts
+  s_0a01ec323f160d::t_8295d76e5959f5 62-64
+  s_0a01ec323f160d::t_f4f446fffcdd6a 1,3-61,65-77
+  s_0a01ec323f160d::t_e614590035c95e 2,78
+contracts/staking/Cargo.toml
+  s_0a01ec323f160d::t_374911aaf2d68a 1-14
+frontend/src/lib/api.ts
+  s_0a01ec323f160d::t_bd984e40b79d20 126-190
+services/stellar-service/src/routes/assets.routes.ts
+  s_0a01ec323f160d::t_2eefee5b7ca708 1,3-69
+  s_0a01ec323f160d::t_e614590035c95e 2,70
+services/stellar-service/src/index.ts
+  s_0a01ec323f160d::t_b4b4cee6b4a08a 1-51
+shared/stellar/index.ts
+  s_0a01ec323f160d::t_afe21fd644f247 42,44-46,48
+  s_0a01ec323f160d::t_4413c1bcf4cc50 4-15,34-38,67
+  s_0a01ec323f160d::t_c78ed96c0bee69 2
+contracts/treasury/Cargo.toml
+  s_0a01ec323f160d::t_101a770064e4b3 1-14
+frontend/src/pages/Anchors.tsx
+  s_0a01ec323f160d::t_c067526d45a6d3 1-89
+services/identity-service/Dockerfile
+  s_0a01ec323f160d::t_b013c4da640356 1-4,8-19
+  s_0a01ec323f160d::t_1f3090bff41e3a 5-7
+frontend/src/pages/Payments.tsx
+  s_0a01ec323f160d::t_a0d56efba8555a 1-90
+frontend/src/components/Navbar.tsx
+  s_0a01ec323f160d::t_773cc683530991 2,15-19
+services/api-gateway/Dockerfile
+  s_0a01ec323f160d::t_b013c4da640356 1-4,8-19
+  s_0a01ec323f160d::t_1f3090bff41e3a 5-7
+frontend/src/pages/Ecosystem.tsx
+  s_0a01ec323f160d::t_b3411c4ee0929e 1-90
+services/election-service/tsconfig.json
+  s_0a01ec323f160d::t_8329a67f637f0c 7,19
+.github/workflows/ci.yml
+  s_0a01ec323f160d::t_5b4c518917148f 1-89
+scripts/expose-backend.ps1
+  s_0a01ec323f160d::t_c7308a7dd8bd89 1-7
+shared/stellar/assets.ts
+  s_0a01ec323f160d::t_dce6156eb2b605 1,3-16,41-56,59-85,87-90,92-93,95,97-115,118-126,128-129,132-133,135,142,150
+  s_0a01ec323f160d::t_205ef4bc9e9764 2,17-40,57-58,86,91,94,96,116-117,127,130-131,134,136-141,143-149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4e099573e414c9d1277ab198f036776fdc85715f",
+  "prompts": {},
+  "sessions": {
+    "s_0a01ec323f160d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07195004bffesRrRP5mUopXtgD",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
