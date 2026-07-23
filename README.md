@@ -3,7 +3,8 @@
  <img width="1907" height="912" alt="image" src="https://github.com/user-attachments/assets/f4088cf8-d22f-4cdc-b3eb-8c0fe2b67f43" />
 
   <br>
-  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" alt="Stellar Network" width="100%" style="max-width:1100px;border-radius:16px;margin:20px 0"/>
+ <img width="1835" height="840" alt="image" src="https://github.com/user-attachments/assets/2a27a0e0-cff9-4e25-9c20-c92ddb08aeb5" />
+
   <br>
 </h1>
 
