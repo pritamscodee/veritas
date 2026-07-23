@@ -1,0 +1,54 @@
+README.md
+  s_dec3f51a77c96a::t_e08b70827183a8 5-32
+  s_dec3f51a77c96a::t_d7bf469c0f5e83 195,197,199-203
+  s_dec3f51a77c96a::t_fc84057fb714e9 247
+  s_dec3f51a77c96a::t_9ae7affeb566a9 35,37,39,41,43,45-50,52-99,115-116,126-135,137,142-143,175-176,190-191,215-216,223-227,240,248-249,253-256,258-259
+  s_dec3f51a77c96a::t_39f9f88322909e 1-4,33-34,36,38,40,42,44,51,100-114,117-125,136,138-141,144-174,177-179,184-186,192-194,196,198,204-211,213-214,217-222,228-239,241-246,250-252,260-264,266-271
+  s_dec3f51a77c96a::t_6e34d031b66f6a 212
+  s_dec3f51a77c96a::t_84dccf44409729 180-183,187-189
+  s_dec3f51a77c96a::t_5470d66386bc09 257,265
+shared/stellar/index.ts
+  s_13f3e75b576736::t_17381193b8df5b 3,5-7,13,18,22-25,32,45
+services/tally-service/src/services/threshold-decryption.ts
+  s_13f3e75b576736::t_7834ab52e85958 2,4-7
+services/api-gateway/package.json
+  s_13f3e75b576736::t_85f3b68108345c 14
+shared/constants/index.ts
+  s_13f3e75b576736::t_a2db318bc4eb45 65-69
+services/election-service/package.json
+  s_13f3e75b576736::t_07e839527b4f90 17
+services/zk-proof-service/package.json
+  s_13f3e75b576736::t_c8f9ad82ecdbb6 14
+services/api-gateway/src/index.ts
+  s_13f3e75b576736::t_d9df30a5c3691c 8,14-19
+services/identity-service/package.json
+  s_13f3e75b576736::t_c05097b24a73c5 17
+services/tally-service/package.json
+  s_13f3e75b576736::t_d282119dfb495e 17
+package-lock.json
+  s_13f3e75b576736::t_cb17a5b4ed40ef 7312,7338,7365,7390,7414
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "026145bc8efba717e1a0444574ddb420f5e5b85f",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    },
+    "s_dec3f51a77c96a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_071ab58c2ffeZiiXzWkh20XCGj",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
