@@ -1,0 +1,21 @@
+package.json
+  s_13f3e75b576736::t_5b592927ae80b3 27
+package-lock.json
+  s_13f3e75b576736::t_7eb2f97e724471 17-19,7433,7437-7453,7462,7466-7482
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4dfbddd6a2bc1c7f2dd918bdea23532dc5356f03",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
