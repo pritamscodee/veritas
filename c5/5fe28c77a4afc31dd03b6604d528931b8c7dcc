@@ -1,0 +1,23 @@
+render.yaml
+  s_13f3e75b576736::t_17a3434b8b6c2a 1-80
+frontend/.gitignore
+  s_13f3e75b576736::t_bb60ef79e8f415 1
+vercel.json
+  s_13f3e75b576736::t_4ea34f4b3b0599 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c55fe28c77a4afc31dd03b6604d528931b8c7dcc",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
