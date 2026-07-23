@@ -1,10 +1,10 @@
-# Veritas
-
-**Governance that can't be bought.**
-
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" alt="Global decentralized governance network" width="100%" style="max-width:1100px;border-radius:12px" />
-</p>
+<h1 align="center">
+  <br>
+  <img src="https://img.shields.io/badge/Veritas-Governance_That_Can't_Be_Bought-7b2cbf?style=for-the-badge&labelColor=0D1117&color=7b2cbf" alt="Veritas Badge"/>
+  <br>
+  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" alt="Stellar Network" width="100%" style="max-width:1100px;border-radius:16px;margin:20px 0"/>
+  <br>
+</h1>
 
 <p align="center">
   <img alt="Decentralized Governance" src="https://img.shields.io/badge/Decentralized-Governance-7b2cbf?style=for-the-badge" />
@@ -19,25 +19,47 @@
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img alt="React" src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
   <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
-  <img alt="Soroban Contracts" src="https://img.shields.io/badge/Smart_Contracts-Soroban-14b8a6?style=flat-square" />
-  <img alt="ZK SNARKs" src="https://img.shields.io/badge/ZK--SNARKs-8b5cf6?style=flat-square" />
+  <img alt="Soroban" src="https://img.shields.io/badge/Soroban-14b8a6?style=flat-square" />
+  <img alt="ZK-SNARKs" src="https://img.shields.io/badge/ZK--SNARKs-8b5cf6?style=flat-square" />
   <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
   <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-  <img alt="Deploy Vercel" src="https://img.shields.io/badge/Deploy-Vercel-000000?style=flat-square&logo=vercel" />
-  <img alt="Deploy Render" src="https://img.shields.io/badge/Deploy-Render-46E3B7?style=flat-square&logo=render" />
+  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel" />
+  <img alt="Render" src="https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render" />
+  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" />
+</p>
+
+<p align="center">
+  <a href="https://veritas-drab.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Frontend-Veritas-2ecc71?style=for-the-badge&logo=vercel" alt="Live Frontend"/>
+  </a>
+  <a href="https://unhopeful-appeasable-grey.ngrok-free.dev">
+    <img src="https://img.shields.io/badge/Live_Backend-ngrok-000000?style=for-the-badge" alt="Live Backend"/>
+  </a>
+  <a href="https://github.com/pritamscodee/veritas">
+    <img src="https://img.shields.io/badge/View_on-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+  </a>
 </p>
 
 ---
 
-## What is Veritas?
+<p align="center">
+  <b>Veritas is a voting system where every real person gets exactly one vote</b><br>
+  <i>— and no one can see how they voted, yet everyone can prove the result is correct.</i>
+</p>
 
-**Veritas is a voting system where every real person gets exactly one vote — and no one can see how they voted, yet everyone can prove the result is correct.** Think of it like a transparent ballot box that only opens when a group of trusted custodians agree, while each ballot is sealed in a way that proves it's valid without revealing the choice inside. It runs on the Stellar blockchain, so it's global, cheap, and tamper-proof by default.
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1100&q=80" alt="Cryptographic Infrastructure" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 > **For who?** DAOs, unions, co-ops, associations, shareholder votes, and any group that needs a fair, auditable election without trusting a central authority.
 
 ---
 
 ## The Problem
+
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1100&q=80" alt="Security Threats" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 | # | Problem | Why it matters |
 |---|---|---|
@@ -49,6 +71,10 @@
 ---
 
 ## The Solution
+
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1100&q=80" alt="Blockchain Transparency" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 Veritas solves all four at once:
 
@@ -67,6 +93,10 @@ Veritas solves all four at once:
 ---
 
 ## Architecture
+
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1100&q=80" alt="Network Architecture" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 ```
 Frontend (React + Vite)              Shared SDK
@@ -99,255 +129,127 @@ Frontend (React + Vite)              Shared SDK
               Stellar Testnet
 ```
 
-### Monorepo Structure
-
-```
-Quorix/
-├── contracts/                     # Rust + Soroban smart contracts (7)
-│   ├── voting_registry/           # Election lifecycle, methods, quorum, on-chain vote count
-│   ├── identity_anchor/           # KYC anchor / attestation anchoring
-│   ├── vote_circuit/              # ZK circuit (Circom-style → WASM prover + proving key)
-│   ├── tally_contract/            # Threshold-decryptable tally (M-of-N)
-│   ├── governance_token/          # Asset tokenization (Soroban token standard)
-│   ├── treasury/                  # Stellar Payments: election fees + voter rewards
-│   └── staking/                   # DeFi: stake tokens for conviction voting power
-├── services/                      # Node.js microservices (Express + Prisma)
-│   ├── api-gateway/               # Reverse proxy, helmet, CORS, rate limiting, /api/health
-│   ├── election-service/          # Election CRUD (PostgreSQL via Prisma)
-│   ├── identity-service/          # KYC anchor relay + attestation ingestion
-│   ├── zk-proof-service/          # ZK proof generation/verification (snarkjs Groth16)
-│   ├── tally-service/             # Threshold tallying & decryption
-│   └── stellar-service/           # Payments, Tokenization, Ramp, DeFi, Anchors
-├── shared/                        # @veritas/types, @veritas/constants, @veritas/stellar
-├── frontend/                      # React + Vite + TypeScript (Tailwind, Recharts, Passkeys)
-├── .github/workflows/             # CI/CD (ci.yml + deploy.yml)
-├── docker-compose.yml             # Local 7-service stack (with Postgres)
-├── render.yaml                    # Backend deploy (Render)
-└── frontend/vercel.json           # Frontend deploy (Vercel)
-```
-
 ---
 
-## Smart Contracts (7 contracts, 41 functions)
+## Smart Contracts
+
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1100&q=80" alt="Smart Contracts" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 ### voting_registry — Election Lifecycle
 
 | Function | Purpose | Auth |
 |----------|---------|------|
 | `initialize(admin)` | Set admin + version | — |
-| `create_election(organizer, title, voting_method, kyc_level, start, end, quorum, options)` | Create election with ≥2 options, lifecycle transitions | `organizer` |
-| `update_status(election_id, new_status)` | Draft → Registration → Voting → Tallying → Completed/Cancelled | `admin` |
+| `create_election(organizer, title, voting_method, kyc_level, start, end, quorum, options)` | Create election with ≥2 options | `organizer` |
+| `update_status(election_id, new_status)` | Draft → Registration → Voting → Tallying → Completed | `admin` |
 | `record_vote(election_id)` | Increment on-chain vote count | — |
 | `get_election(election_id)` | Full election state | — |
 | `get_election_count()` | Total elections created | — |
-
-**Voting methods:** One-Person-One-Vote · Quadratic · Token-Weighted · Conviction
 
 ### identity_anchor — KYC & Voting Credentials
 
 | Function | Purpose | Auth |
 |----------|---------|------|
 | `initialize(admin)` | Set admin | — |
-| `register_anchor(name, signing_key)` | Register trusted anchor (MoneyGram, Circle) | `admin` |
-| `verify_kyc_attestation(account, anchor, kyc_level, credential_hash, signature)` | Verify anchor-signed KYC on-chain | — |
-| `issue_credential(account, election_id, credential_hash)` | Issue per-election voting credential | `account` |
+| `register_anchor(name, signing_key)` | Register trusted anchor | `admin` |
+| `verify_kyc_attestation(account, anchor, kyc_level, credential_hash, signature)` | Verify on-chain KYC | — |
+| `issue_credential(account, election_id, credential_hash)` | Issue voting credential | `account` |
 | `mark_credential_used(account, election_id)` | Prevent double-voting | — |
 | `has_valid_credential(account, election_id)` | Check eligibility | — |
-| `get_credential(account, election_id)` | Retrieve credential details | — |
 
 ### vote_circuit — Zero-Knowledge Proofs
 
 | Function | Purpose |
 |----------|---------|
-| `submit_proof(election_id, proof_data, public_inputs, nullifier, encrypted_vote)` | Submit Groth16 ZK-SNARK proof |
-| `is_nullifier_used(election_id, nullifier)` | Double-vote prevention via nullifier |
-| `batch_verify(election_id, proofs)` | Batch verification for scalability |
+| `submit_proof(election_id, proof_data, public_inputs, nullifier, encrypted_vote)` | Submit Groth16 ZK-SNARK |
+| `is_nullifier_used(election_id, nullifier)` | Double-vote prevention |
+| `batch_verify(election_id, proofs)` | Batch verification |
 
-**Public signals:** `[electionId, nullifier, optionIndex, "1"]` — proves valid ballot without revealing choice.
-
-### tally_contract — Threshold Decryption
+### tally_contract — Threshold Decryption (M=3, N=5)
 
 | Function | Purpose | Auth |
 |----------|---------|------|
-| `initialize(admin, threshold_m, total_n)` | Set M-of-N threshold | — |
-| `register_key_holder(holder_id, public_key)` | Register decryption key holder | `admin` |
-| `submit_decryption_share(holder_id, election_id, share)` | Submit partial decryption | — |
-| `finalize_tally(election_id)` | Combine M shares → decrypt → produce result | `admin` |
-| `get_result(election_id)` | Retrieve decrypted tally | — |
-| `get_share_count(election_id)` | Check if threshold met | — |
-
-**Default:** M=3, N=5 — any 3 of 5 key holders can decrypt the tally.
+| `initialize(admin, threshold_m, total_n)` | Set threshold | — |
+| `register_key_holder(holder_id, public_key)` | Register holder | `admin` |
+| `submit_decryption_share(holder_id, election_id, share)` | Submit partial | — |
+| `finalize_tally(election_id)` | Combine → decrypt → tally | `admin` |
+| `get_result(election_id)` | Retrieve result | — |
 
 ### governance_token — Tokenized Governance
 
 | Function | Purpose | Auth |
 |----------|---------|------|
-| `initialize(admin, name, symbol, decimals)` | Create token with metadata | `admin` |
+| `initialize(admin, name, symbol, decimals)` | Create token | `admin` |
 | `mint(to, amount)` | Issue tokens | `admin` |
 | `burn(from, amount)` | Destroy tokens | `from` |
-| `transfer(from, to, amount)` | Transfer tokens | `from` |
+| `transfer(from, to, amount)` | Transfer | `from` |
 | `balance(account)` | Read balance | — |
-| `total_supply()` | Total minted | — |
-| `name()` / `symbol()` / `decimals()` | Token metadata | — |
 
 ### treasury — Payments & Rewards
 
 | Function | Purpose | Auth |
 |----------|---------|------|
-| `initialize(admin)` | Set admin | — |
-| `collect_fee(payer, election_id, amount)` | Collect election creation fee | `payer` |
-| `reward_voter(voter, election_id, amount)` | Disburse voter micro-reward | `admin` |
+| `collect_fee(payer, election_id, amount)` | Election fee (1.0 XLM) | `payer` |
+| `reward_voter(voter, election_id, amount)` | Voter reward (0.1 XLM) | `admin` |
 | `balance()` | Treasury balance | — |
-
-**Economics:** 1.0 XLM per election fee · 0.1 XLM per voter reward.
 
 ### staking — DeFi Conviction Voting
 
 | Function | Purpose | Auth |
 |----------|---------|------|
-| `initialize(admin, token, max_lock_seconds)` | Set staking params | `admin` |
-| `stake(staker, amount, lock_seconds)` | Lock tokens for voting power | `staker` |
-| `unstake(staker)` | Release after lock expires | `staker` |
-| `voting_power(staker)` | Read conviction-weighted power | — |
-| `get_stake(staker)` | Full stake details | — |
-
-**Power formula:** `staked × (1 + lock_seconds / max_lock)` — longer lock = more weight.
+| `stake(staker, amount, lock_seconds)` | Lock tokens | `staker` |
+| `unstake(staker)` | Release after lock | `staker` |
+| `voting_power(staker)` | Conviction power | — |
 
 ---
 
-## Backend Services (6 services, 36 endpoints)
+## Stellar Use Cases
 
-### api-gateway — Port 3000
-
-| Layer | Detail |
-|-------|--------|
-| Middleware | helmet, CORS, morgan, express-rate-limit (100 req/15 min) |
-| Proxy routes | `/api/elections` → election-service, `/api/identity` → identity-service, `/api/zk-proof` → zk-proof-service, `/api/tally` → tally-service, `/api/payments` → stellar-service, `/api/assets` → stellar-service, `/api/ramp` → stellar-service, `/api/defi` → stellar-service, `/api/anchors` → stellar-service |
-| Health | `GET /health` (gateway), `GET /api/health` (aggregated all services) |
-
-### election-service — Port 3001 (PostgreSQL)
-
-| Method | Endpoint | Purpose |
-|--------|----------|---------|
-| `POST` | `/elections/` | Create election (≥2 options, time window, quorum, KYC level) |
-| `GET` | `/elections/` | List elections (filterable by status, paginated) |
-| `GET` | `/elections/:id` | Election detail with vote options |
-| `PATCH` | `/elections/:id/status` | Lifecycle transition (draft → registration → voting → tallying → completed) |
-| `POST` | `/elections/:id/options` | Add vote option (draft only) |
-| `DELETE` | `/elections/:id` | Delete election (draft only) |
-
-### identity-service — Port 3002 (PostgreSQL)
-
-| Method | Endpoint | Purpose |
-|--------|----------|---------|
-| `POST` | `/identity/anchors` | Register trusted anchor |
-| `GET` | `/identity/anchors` | List active anchors |
-| `POST` | `/identity/attestations/verify` | Verify KYC attestation signature |
-| `POST` | `/identity/eligibility` | Check voter eligibility (KYC level + credential) |
-| `POST` | `/identity/credentials` | Issue voting credential |
-| `GET` | `/identity/credentials/:accountId/:electionId` | Retrieve credential |
-
-**Background:** `AttestationRelay` polls Stellar Horizon every 30s for new anchor attestations.
-
-### zk-proof-service — Port 3003 (stateless)
-
-| Method | Endpoint | Purpose |
-|--------|----------|---------|
-| `POST` | `/zk-proof/prove` | Generate Groth16 ZK-SNARK proof (snarkjs + circomlibjs) |
-| `POST` | `/zk-proof/verify` | Verify proof against public inputs |
-| `GET` | `/zk-proof/status` | Prover status (mock vs real circuit) |
-
-**Inputs:** credentialHash, electionId, optionIndex, nullifier, salt (auto-generated 32 bytes).
-
-### tally-service — Port 3004 (PostgreSQL)
-
-| Method | Endpoint | Purpose |
-|--------|----------|---------|
-| `POST` | `/tally/key-holders` | Register decryption key holder |
-| `GET` | `/tally/key-holders` | List active key holders |
-| `POST` | `/tally/shares` | Submit decryption share |
-| `GET` | `/tally/shares/:electionId` | Check share count & decrypt readiness |
-| `POST` | `/tally/finalize/:electionId` | Combine shares → Lagrange interpolation → decrypt → tally |
-| `GET` | `/tally/results/:electionId` | Retrieve finalized result |
-
-### stellar-service — Port 3005 (in-memory)
-
-| Module | Method | Endpoint | Purpose |
-|--------|--------|----------|---------|
-| **Payments** | `GET` | `/payments/balance?account=G...` | XLM balance |
-| | `GET` | `/payments/history?account=G...` | Payment history |
-| | `POST` | `/payments/send` | Send XLM (with memo) |
-| | `POST` | `/payments/election-fee` | Pay election fee |
-| | `POST` | `/payments/create-account` | Fund new Stellar account |
-| **Assets** | `POST` | `/assets/tokenize` | Issue Stellar Asset Contract |
-| | `POST` | `/assets/deploy-contract` | Deploy SAC to Soroban |
-| | `POST` | `/assets/:contract/mint` | Mint governance tokens |
-| | `GET` | `/assets/` | List tokenized assets |
-| **DeFi** | `POST` | `/defi/stake` | Stake tokens (lock period) |
-| | `POST` | `/defi/unstake` | Unstake after lock |
-| | `GET` | `/defi/power` | Voting power calculator |
-| **Ramp** | `GET` | `/ramp/anchors` | List MoneyGram/Circle/Stellar Anchor |
-| | `POST` | `/ramp/quote` | SEP-24 deposit/withdraw quote |
-| **Anchors** | `GET` | `/anchors/` | Trusted anchors list |
-| | `GET` | `/anchors/toml` | SEP-1 stellar.toml |
-| | `POST` | `/anchors/trust` | Add anchor as signer |
-| | `POST` | `/anchors/verify` | Verify on-chain KYC |
-
----
-
-## Stellar Use Cases (all 6 exercised)
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=1100&q=80" alt="Stellar Blockchain" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 | Use Case | Implementation | Business Value |
 |---|---|---|
-| **Anchors** | MoneyGram, Circle, Stellar Anchor for KYC attestation · SEP-1 stellar.toml · SEP-24 transfer server refs · on-chain signer verification | Turnkey real-human verification — the moat competitors can't replicate |
-| **Payments** | Sub-cent XLM election fees (1 XLM) + voter rewards (0.1 XLM) · Soroban treasury contract · Horizon payment history | Sustainable protocol revenue at scale |
-| **Asset Tokenization** | Governance token as Stellar Asset Contract (SAC) · mint/burn via Soroban · deterministic contract address derivation | Token-weighted + conviction voting without leaving Stellar |
-| **On/Off Ramp** | SEP-24 interactive deposit/withdraw · MoneyGram (USD/EUR/GBP/MXN) · Circle (USDC) · fee quoting | Zero-friction fiat → crypto onboarding for non-crypto voters |
-| **DeFi** | Time-locked staking (up to 30 days) · conviction power formula · composable with Soroban pools | Aligns voter commitment with governance outcomes |
-| **Ecosystem** | MoneyGram · Circle · Franklin Templeton (FOBXX) · Bitbond · SDF · Ultra Stellar integrated | Full ecosystem participation, not a silo |
+| **Anchors** | MoneyGram, Circle, Stellar Anchor · SEP-1 stellar.toml · SEP-24 transfer server | Turnkey real-human verification |
+| **Payments** | XLM election fees (1 XLM) + voter rewards (0.1 XLM) · Soroban treasury | Sustainable protocol revenue |
+| **Tokenization** | Governance token as SAC · mint/burn via Soroban | Token-weighted voting |
+| **On/Off Ramp** | SEP-24 deposit/withdraw · MoneyGram (USD/EUR/GBP/MXN) · Circle (USDC) | Zero-friction fiat onboarding |
+| **DeFi** | Time-locked staking (up to 30 days) · conviction power formula | Aligns voter commitment |
+| **Ecosystem** | MoneyGram · Circle · Franklin Templeton · Bitbond · SDF | Full ecosystem integration |
 
 ---
 
-## Frontend (12 pages, 5 components, 5 hooks)
+## Frontend
 
-### Pages
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=80" alt="Dashboard Interface" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 | Page | Route | Feature |
 |------|-------|---------|
-| Elections | `/` | Filterable list (all/voting/registration/completed), ElectionCard with status badges |
-| Election Detail | `/elections/:id` | Full lifecycle: registration → ZK proof generation → voting → results chart |
-| Create Election | `/create` | Form: title, voting method, KYC level, quorum, time window, vote options |
-| Health Dashboard | `/health` | Aggregated microservice health (all 6 services) |
-| Payments | `/payments` | XLM send, balance check, election fee/reward info |
-| Assets | `/assets` | Tokenize governance assets, view issued SACs, mint tokens |
-| Ramp | `/ramp` | SEP-24 quote builder with MoneyGram/Circle/Stellar Anchor |
-| DeFi | `/defi` | Stake tokens for conviction voting power, calculator |
-| Anchors | `/anchors` | KYC attestation details, SEP-1 stellar.toml, trusted anchor list |
-| Ecosystem | `/ecosystem` | 9 real Stellar ecosystem projects + use case cards |
-
-### Components
-
-| Component | Purpose |
-|-----------|---------|
-| `ElectionCard` | Card with status badge, vote count, time, KYC level, live indicator |
-| `VoteForm` | Option selector → generates ZK-SNARK proof on submit |
-| `ResultsChart` | Recharts bar chart + horizontal bar progress for tally |
-| `Navbar` | Sticky nav with 8 links, wallet connect/disconnect |
-| `Footer` | 3-column footer (brand, protocol, ecosystem) |
-
-### Hooks
-
-| Hook | Purpose |
-|------|---------|
-| `useElections(status?)` | Fetch/filter elections list |
-| `useElection(id)` | Fetch single election detail |
-| `useEligibility(accountId, electionId, kycLevel)` | Check voter KYC eligibility |
-| `useTallyResult(electionId)` | Fetch decrypted tally |
-| `useWallet()` | Freighter wallet connect/disconnect |
+| Elections | `/` | Filterable list, ElectionCard with status badges |
+| Election Detail | `/elections/:id` | ZK proof generation → voting → results chart |
+| Create Election | `/create` | Form: voting method, KYC level, quorum, options |
+| Health | `/health` | Aggregated microservice dashboard |
+| Payments | `/payments` | XLM send, balance, election fees |
+| Assets | `/assets` | Tokenize governance assets, mint tokens |
+| Ramp | `/ramp` | SEP-24 quote builder |
+| DeFi | `/defi` | Stake tokens for conviction voting |
+| Anchors | `/anchors` | KYC attestation, SEP-1 stellar.toml |
+| Ecosystem | `/ecosystem` | 9 real Stellar projects |
 
 ---
 
 ## Key Features
+
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=520&q=80" alt="Verifiable" width="31%" style="border-radius:10px;margin:4px" />
+  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=520&q=80" alt="Private" width="31%" style="border-radius:10px;margin:4px" />
+  <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=520&q=80" alt="Transparent" width="31%" style="border-radius:10px;margin:4px" />
+</p>
 
 | Feature | What it means for the user | Badge |
 |---|---|---|
@@ -362,6 +264,10 @@ Quorix/
 
 ## How It Works
 
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1100&q=80" alt="On-chain Transparency" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
+
 ```
  1. Voter authenticates with a passkey (biometric / PIN — no crypto knowledge)
          │
@@ -373,8 +279,6 @@ Quorix/
          │
  5. Threshold M-of-N keyholders cooperatively decrypt the final tally
 ```
-
-### Why It's Different
 
 | Property | How Veritas delivers it |
 |---|---|
@@ -389,6 +293,10 @@ Quorix/
 
 ## The Opportunity
 
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=80" alt="Market Opportunity" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
+
 - **~$25B** global elections & voting technology market, growing double digits as governance moves digital.
 - **$20B+** in DAO treasuries today, almost all governed by insecure, plutocratic token voting.
 - **Millions** of regulated elections annually (unions, co-ops, HOAs, associations, ESG/shareholder votes) mandated to be fair and auditable.
@@ -398,6 +306,10 @@ Quorix/
 
 ## Business Model
 
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1100&q=80" alt="Revenue Streams" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
+
 | Revenue Stream | Description |
 |---|---|
 | **SaaS licensing** | Per-election / per-organization plans for associations, unions, co-ops, and DAOs. |
@@ -405,15 +317,13 @@ Quorix/
 | **Protocol micro-fees** | Optional per-vote fee on public-network elections (sub-cent). |
 | **White-label SDK** | Verifiable governance primitives for platforms to embed. |
 
-### Go-to-market
-
-- **DAO tooling** — governance plugins for the $20B+ treasury market.
-- **Regulated industries** — credit unions, HOAs, professional associations with mandated fair elections.
-- **Stellar ecosystem** — financial-inclusion partnerships through the anchor network (MoneyGram, Circle).
-
 ---
 
 ## Roadmap
+
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1100&q=80" alt="Roadmap" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
 
 - [x] Core voting registry & Soroban contracts
 - [x] ZK-proof service & vote circuit
@@ -434,8 +344,6 @@ Quorix/
 ---
 
 ## Getting Started
-
-**Prerequisites:** Node ≥ 20, Docker, a Stellar testnet account, Rust/Soroban CLI (for contracts).
 
 ```bash
 npm install        # install workspace dependencies
@@ -460,12 +368,8 @@ npm run test       # test
 
 ### Production CI/CD
 
-GitHub Actions pipeline in `.github/workflows`:
-
-- **`ci.yml`** — on every push/PR: lint, typecheck, build all Node workspaces, `cargo fmt` check, matrix Docker build of all 6 services with GHA layer caching.
-- **`deploy.yml`** — on push to `main`:
-  - **Frontend → Vercel** (`--prod`)
-  - **Backend → GHCR** (Docker images) + **Render** deploy hook
+- **`ci.yml`** — lint, typecheck, build, cargo fmt, matrix Docker build
+- **`deploy.yml`** — Vercel frontend + GHCR images + Render hook
 
 ### Required GitHub Secrets
 
@@ -477,7 +381,7 @@ GitHub Actions pipeline in `.github/workflows`:
 | `GITHUB_TOKEN` | Built-in; pushes to GHCR |
 | `RENDER_DEPLOY_HOOK` | Render deploy hook URL |
 
-### Local Public Backend (Docker + ngrok)
+### Local Public Backend
 
 ```bash
 docker compose up -d                                   # build & run full stack
@@ -489,12 +393,16 @@ ngrok config add-authtoken <YOUR_NGROK_AUTHTOKEN>      # one-time
 
 ## Security & Trust
 
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1100&q=80" alt="Security" width="100%" style="max-width:900px;border-radius:12px;margin:20px 0"/>
+</p>
+
 - Defense-in-depth: `helmet`, CORS, rate limiting at the gateway.
-- Health-aggregation endpoint (`/api/health`) for observability across all services.
-- On-chain immutability + public verifiability means results can be independently audited.
-- ZK-SNARKs ensure vote privacy even from the protocol operators.
-- Threshold M-of-N decryption prevents single-party key compromise.
-- Third-party smart-contract & ZK-circuit audit planned before mainnet launch.
+- Health-aggregation endpoint (`/api/health`) for observability.
+- On-chain immutability + public verifiability.
+- ZK-SNARKs ensure vote privacy even from operators.
+- Threshold M-of-N decryption prevents single-party compromise.
+- Third-party audit planned before mainnet launch.
 
 ---
 
@@ -502,12 +410,12 @@ ngrok config add-authtoken <YOUR_NGROK_AUTHTOKEN>      # one-time
 
 | Layer | Stack |
 |---|---|
-| Frontend | React 18, Vite, TypeScript, Tailwind CSS, Recharts, React Router, Passkeys (WebAuthn) |
+| Frontend | React 18, Vite, TypeScript, Tailwind CSS, Recharts, Passkeys (WebAuthn) |
 | Backend | Node.js, Express, TypeScript, Prisma ORM, PostgreSQL |
-| Blockchain | Stellar, Soroban smart contracts (Rust), Horizon & Soroban RPC |
-| Privacy | ZK-SNARKs (Circom → WASM prover + proving key), threshold (M-of-N) decryption |
-| Identity | Stellar anchors (MoneyGram, Circle) KYC attestations |
-| Infra | Docker, docker-compose, GitHub Actions, Render (API/services), Vercel (web) |
+| Blockchain | Stellar, Soroban (Rust), Horizon & Soroban RPC |
+| Privacy | ZK-SNARKs (Circom → WASM), threshold (M-of-N) decryption |
+| Identity | Stellar anchors (MoneyGram, Circle) KYC |
+| Infra | Docker, GitHub Actions, Render, Vercel |
 
 ---
 
@@ -530,5 +438,7 @@ Veritas is raising a **seed round** to ship mainnet, complete security audits, a
 ---
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Veritas-Governance_That_Can't_Be_Bought-7b2cbf?style=for-the-badge&labelColor=0D1117" alt="Veritas Badge"/>
+  <br>
   <sub>Veritas — governance that can't be bought.</sub>
 </p>
