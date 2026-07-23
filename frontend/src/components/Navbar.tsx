@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Vote, BarChart3, PlusCircle, Activity } from "lucide-react";
+import { Shield, Vote, BarChart3, PlusCircle, Activity, Coins, Layers, ArrowLeftRight, Boxes, Globe } from "lucide-react";
 import { cn, formatAddress } from "@/lib/utils";
 
 interface NavbarProps {
@@ -12,6 +12,11 @@ interface NavbarProps {
 const navLinks = [
   { to: "/", label: "Elections", icon: Vote },
   { to: "/create", label: "Create", icon: PlusCircle },
+  { to: "/ecosystem", label: "Ecosystem", icon: Globe },
+  { to: "/payments", label: "Payments", icon: Coins },
+  { to: "/assets", label: "Tokens", icon: Layers },
+  { to: "/ramp", label: "Ramp", icon: ArrowLeftRight },
+  { to: "/defi", label: "DeFi", icon: Boxes },
   { to: "/health", label: "Status", icon: Activity },
 ];
 

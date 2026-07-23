@@ -1,12 +1,12 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "frontend/dist",
+  "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": "vite",
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://veritas-api-gateway.onrender.com/api/:path*"
+      "destination": "https://unhopeful-appeasable-grey.ngrok-free.dev/api/:path*"
     }
   ],
   "headers": [

@@ -11,6 +11,7 @@ export const SERVICE_URLS = {
   IDENTITY: "http://localhost:3002",
   ZK_PROOF: "http://localhost:3003",
   TALLY: "http://localhost:3004",
+  STELLAR: "http://localhost:3005",
 } as const;
 
 export const STELLAR = {
@@ -66,4 +67,38 @@ export const ANCHOR_SIGNING_KEYS = {
   MONEYGRAM: "",
   CIRCLE: "",
   STELLAR_ANCHOR: "",
+  VERITAS: "",
 } as const;
+
+// --- Stellar use-case configuration ---
+
+export const PAYMENTS = {
+  FEE_ASSET: "XLM",
+  ELECTION_FEE: "1.0",
+  VOTER_REWARD: "0.1",
+} as const;
+
+export const ASSETS = {
+  GOVERNANCE_TOKEN_CODE: "VOTE",
+  DEFAULT_STARTING_BALANCE: "2",
+} as const;
+
+export const RAMP = {
+  DEFAULT_ASSET: "USDC",
+  FEE_RATE: "0.01",
+} as const;
+
+export const DEFI = {
+  STAKING_TOKEN: "VOTE",
+  MAX_LOCK_SECONDS: 30 * 24 * 60 * 60,
+  MIN_STAKE: "1",
+} as const;
+
+export const STELLAR_USE_CASES = [
+  { key: "anchors", label: "Anchors", href: "/ecosystem/anchors" },
+  { key: "payments", label: "Payments", href: "/payments" },
+  { key: "tokenization", label: "Tokenization", href: "/assets" },
+  { key: "ramps", label: "On/Off Ramp", href: "/ramp" },
+  { key: "defi", label: "DeFi", href: "/defi" },
+  { key: "ecosystem", label: "Ecosystem", href: "/ecosystem" },
+] as const;

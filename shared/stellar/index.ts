@@ -1,10 +1,18 @@
 import * as StellarSdk from "stellar-sdk";
-import type { AnchorKYCAttestation } from "@veritas/types";
-import { STELLAR, ANCHOR_SIGNING_KEYS } from "@veritas/constants";
+import { ANCHOR_SIGNING_KEYS } from "@veritas/constants";
 
-const HORIZON_URL = STELLAR.HORIZON_URL;
-const SOROBAN_RPC_URL = STELLAR.SOROBAN_RPC_URL;
-const NETWORK_PASSPHRASE = STELLAR.NETWORK_PASSPHRASE;
+export * from "./anchors";
+export * from "./payments";
+export * from "./assets";
+export * from "./ramp";
+export * from "./defi";
+
+// --- Connection helpers (legacy) ---
+const HORIZON_URL = process.env.STELLAR_HORIZON_URL || "https://horizon-testnet.stellar.org";
+const SOROBAN_RPC_URL =
+  process.env.STELLAR_SOROBAN_RPC_URL || "https://soroban-testnet.stellar.org";
+const NETWORK_PASSPHRASE =
+  process.env.STELLAR_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015";
 
 let _server: StellarSdk.Horizon.Server | null = null;
 let _sorobanRpc: StellarSdk.SorobanRpc.Server | null = null;
@@ -23,26 +31,24 @@ export function getNetworkPassphrase(): string {
   return NETWORK_PASSPHRASE;
 }
 
-export async function verifyKYCAttestation(attestation: AnchorKYCAttestation): Promise<boolean> {
+export async function verifyKYCAttestation(attestation: {
+  accountId: string;
+  anchor: string;
+  expiresAt: number;
+}): Promise<boolean> {
   try {
     const server = getServer();
     const account = await server.loadAccount(attestation.accountId);
-    const signers = account.signers;
-
-    const anchorKey = ANCHOR_SIGNING_KEYS[attestation.anchor];
+    const anchorKey = ANCHOR_SIGNING_KEYS[attestation.anchor as keyof typeof ANCHOR_SIGNING_KEYS];
     if (!anchorKey) return false;
-
-    const isValid = signers.some((s) => s.key === anchorKey && s.weight >= 1);
+    const hasAnchorSigner = account.signers.some(
+      (s) => s.key === anchorKey && s.weight >= 1
+    );
     const isExpired = attestation.expiresAt < Date.now();
-
-    return isValid && !isExpired;
+    return hasAnchorSigner && !isExpired;
   } catch {
     return false;
   }
-}
-
-export function getTrustedAnchors(): Record<string, string> {
-  return { ...ANCHOR_SIGNING_KEYS };
 }
 
 export async function submitTransaction(
@@ -58,7 +64,7 @@ export async function submitTransaction(
   const contract = new StellarSdk.Contract(contractAddress);
   const transaction = new StellarSdk.TransactionBuilder(sourceAccount, {
     fee: "100000",
-    networkPassphrase: getNetworkPassphrase(),
+    networkPassphrase: NETWORK_PASSPHRASE,
   })
     .addOperation(contract.call(method, ...args))
     .setTimeout(300)

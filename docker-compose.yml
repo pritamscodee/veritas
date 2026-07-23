@@ -1,6 +1,18 @@
-version: "3.9"
-
 services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=veritas
+      - POSTGRES_PASSWORD=veritas
+      - POSTGRES_DB=veritas
+    ports:
+      - "5432:5432"
+    volumes:
+      - veritas-db:/var/lib/postgresql/data
+    networks:
+      - veritas-net
+
   api-gateway:
     build:
       context: .
@@ -14,11 +26,13 @@ services:
       - IDENTITY_SERVICE_URL=http://identity-service:3002
       - ZK_PROOF_SERVICE_URL=http://zk-proof-service:3003
       - TALLY_SERVICE_URL=http://tally-service:3004
+      - STELLAR_SERVICE_URL=http://stellar-service:3005
     depends_on:
       - election-service
       - identity-service
       - zk-proof-service
       - tally-service
+      - stellar-service
     networks:
       - veritas-net
 
@@ -33,9 +47,12 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3001
+      - DATABASE_URL=postgresql://veritas:veritas@db:5432/veritas
       - STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
       - STELLAR_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
       - STELLAR_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
+    depends_on:
+      - db
     networks:
       - veritas-net
 
@@ -50,10 +67,13 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3002
+      - DATABASE_URL=postgresql://veritas:veritas@db:5432/veritas
       - STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
       - MONEYGRAM_SIGNING_KEY=${MONEYGRAM_SIGNING_KEY}
       - CIRCLE_SIGNING_KEY=${CIRCLE_SIGNING_KEY}
       - STELLAR_ANCHOR_SIGNING_KEY=${STELLAR_ANCHOR_SIGNING_KEY}
+    depends_on:
+      - db
     networks:
       - veritas-net
 
@@ -82,13 +102,34 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3004
+      - DATABASE_URL=postgresql://veritas:veritas@db:5432/veritas
       - STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
       - STELLAR_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
       - THRESHOLD_M=3
       - THRESHOLD_N=5
+    depends_on:
+      - db
+    networks:
+      - veritas-net
+
+  stellar-service:
+    build:
+      context: .
+      dockerfile: services/stellar-service/Dockerfile
+    ports:
+      - "3005:3005"
+    environment:
+      - NODE_ENV=development
+      - PORT=3005
+      - STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
+      - STELLAR_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
+      - STELLAR_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
     networks:
       - veritas-net
 
 networks:
   veritas-net:
     driver: bridge
+
+volumes:
+  veritas-db:

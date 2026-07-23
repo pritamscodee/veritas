@@ -9,12 +9,13 @@
     "frontend"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:gateway\" \"npm run dev:election\" \"npm run dev:identity\" \"npm run dev:zk-proof\" \"npm run dev:tally\" \"npm run dev:frontend\"",
+    "dev": "concurrently \"npm run dev:gateway\" \"npm run dev:election\" \"npm run dev:identity\" \"npm run dev:zk-proof\" \"npm run dev:tally\" \"npm run dev:stellar\" \"npm run dev:frontend\"",
     "dev:gateway": "npm run dev --workspace=services/api-gateway",
     "dev:election": "npm run dev --workspace=services/election-service",
     "dev:identity": "npm run dev --workspace=services/identity-service",
     "dev:zk-proof": "npm run dev --workspace=services/zk-proof-service",
     "dev:tally": "npm run dev --workspace=services/tally-service",
+    "dev:stellar": "npm run dev --workspace=services/stellar-service",
     "dev:frontend": "npm run dev --workspace=frontend",
     "build": "npm run build --workspaces --if-present",
     "build:shared": "npm run build --workspace=shared/types && npm run build --workspace=shared/constants && npm run build --workspace=shared/stellar",

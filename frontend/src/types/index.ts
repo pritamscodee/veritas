@@ -62,3 +62,65 @@ export interface ServiceHealth {
   services: Array<{ service: string; status: string; version?: string }>;
   timestamp: number;
 }
+
+// --- Stellar use-case types ---
+
+export type AnchorProvider = "moneygram" | "circle" | "stellar_anchor" | "veritas";
+
+export interface StellarAnchor {
+  provider: AnchorProvider;
+  name: string;
+  signingKey: string;
+  transferServer: string;
+  homeDomain: string;
+  currencies: string[];
+  isActive: boolean;
+}
+
+export interface Payment {
+  hash: string;
+  source: string;
+  destination: string;
+  amount: string;
+  asset: string;
+  memo?: string;
+  createdAt: string;
+}
+
+export interface TokenizedAsset {
+  asset: string;
+  code: string;
+  issuer: string;
+  contractAddress: string;
+  totalSupply: string;
+  txHash: string;
+}
+
+export type RampDirection = "deposit" | "withdraw";
+
+export interface RampQuote {
+  provider: AnchorProvider;
+  direction: RampDirection;
+  assetCode: string;
+  amount: string;
+  fee: string;
+  rate: string;
+  url: string;
+}
+
+export interface StakePosition {
+  account: string;
+  tokenContract: string;
+  staked: string;
+  votingPower: string;
+  unlockAt: number;
+}
+
+export interface EcosystemProject {
+  name: string;
+  category: string;
+  description: string;
+  website: string;
+  stellarOrg: boolean;
+}
+

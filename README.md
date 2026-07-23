@@ -75,6 +75,19 @@ Veritas solves all four at once:
 
 ---
 
+## Stellar use cases
+
+Veritas is built end-to-end on Stellar and exercises the network's core use cases:
+
+| Stellar use case | How Veritas uses it | Location |
+|---|---|---|
+| **Anchors** | Regulated anchors (MoneyGram, Circle) issue KYC attestations for real-human verification (SEP-1 / SEP-24). | `contracts/identity_anchor`, `shared/stellar/anchors.ts`, `/ecosystem/anchors` |
+| **Payments** | Sub-cent XLM payments for election fees and voter rewards. | `contracts/treasury`, `shared/stellar/payments.ts`, `/payments` |
+| **Asset Tokenization** | Issued governance assets wrapped as Stellar Asset Contracts (SAC) for Soroban voting. | `contracts/governance_token`, `shared/stellar/assets.ts`, `/assets` |
+| **On/Off Ramp** | SEP-24 interactive fiat ↔ XLM flows via trusted anchors. | `shared/stellar/ramp.ts`, `/ramp` |
+| **DeFi** | Stake governance tokens to accrue conviction voting power. | `contracts/staking`, `shared/stellar/defi.ts`, `/defi` |
+| **Ecosystem** | Integrates with the wider Stellar ecosystem (MoneyGram, Circle, SDF, tokenized funds). | `/ecosystem` |
+
 ## Key features
 
 <p align="center">
@@ -148,16 +161,20 @@ Quorix/
 │   ├── voting_registry/       # Election lifecycle, methods, quorum, on-chain vote count
 │   ├── identity_anchor/       # KYC anchor / attestation anchoring
 │   ├── tally_contract/        # Threshold-decryptable tally
-│   └── vote_circuit/          # ZK circuit (Circom-style -> WASM prover + proving key)
+│   ├── vote_circuit/          # ZK circuit (Circom-style -> WASM prover + proving key)
+│   ├── governance_token/      # Asset tokenization (Soroban token standard)
+│   ├── treasury/              # Stellar Payments: election fees + voter rewards
+│   └── staking/               # DeFi: stake tokens for conviction voting power
 ├── services/                  # Node.js microservices (Express + Prisma)
 │   ├── api-gateway/           # Reverse proxy, helmet, CORS, rate limiting, /api/health
 │   ├── election-service/      # Election CRUD (PostgreSQL via Prisma)
 │   ├── identity-service/      # KYC anchor relay + attestation ingestion
 │   ├── zk-proof-service/       # ZK proof generation/verification
-│   └── tally-service/         # Threshold tallying & decryption
+│   ├── tally-service/         # Threshold tallying & decryption
+│   └── stellar-service/       # Payments, Tokenization, Ramp, DeFi, Anchors (port 3005)
 ├── shared/                    # @veritas/types, @veritas/constants, @veritas/stellar
 ├── frontend/                  # React + Vite + TypeScript (Tailwind, Recharts, Passkeys)
-├── docker-compose.yml         # Local 5-service stack
+├── docker-compose.yml         # Local 6-service stack
 ├── render.yaml                # Backend deploy (Render)
 └── vercel.json                # Frontend deploy (Vercel)
 ```
@@ -209,6 +226,11 @@ Quorix/
 - [x] Identity anchor relay & KYC attestation
 - [x] Threshold tally & decryption
 - [x] Passkey-based voter UX + dashboard
+- [x] Stellar Payments (election fees + voter rewards)
+- [x] Asset Tokenization (governance token SAC)
+- [x] On/Off Ramp (SEP-24 anchor flows)
+- [x] DeFi staking for conviction voting
+- [x] Stellar ecosystem explorer
 - [ ] Mainnet hardening & audits (**target: [insert quarter]**)
 - [ ] DAO governance plugins & SDK
 - [ ] Enterprise compliance & audit console
@@ -234,8 +256,47 @@ npm run test       # test
 | Identity Service | 3002 |
 | ZK Proof Service | 3003 |
 | Tally Service | 3004 |
+| Stellar Service | 3005 |
 
 Deploy: backend on **Render** (`render.yaml`), frontend on **Vercel** (`vercel.json`, rewrites `/api/*` to the gateway).
+
+---
+
+## Deployment (CI/CD)
+
+A production-ready GitHub Actions pipeline lives in `.github/workflows`:
+
+- **`ci.yml`** — on every push/PR: installs deps, builds shared packages, lints & typechecks
+  all Node workspaces, builds everything, runs contract `cargo fmt` checks, and builds every
+  backend Docker image (matrix over the 6 services) with GHA layer caching.
+- **`deploy.yml`** — on push to `main` (or manual `workflow_dispatch`):
+  - **Frontend → Vercel** via `amondnet/vercel-action` (`--prod`), using `frontend/vercel.json`.
+  - **Backend → Docker** images pushed to **GHCR** (`ghcr.io/<you>/veritas-<service>:latest`),
+    then triggers a **Render** deploy hook so the public backend is updated.
+
+### Required GitHub secrets
+
+| Secret | Purpose |
+|---|---|
+| `VERCEL_TOKEN` | Vercel deploy token (vercel.com/account/tokens) |
+| `VERCEL_ORG_ID` | Vercel team/org id |
+| `VERCEL_PROJECT_ID` | Vercel project id (`veritas`) |
+| `GITHUB_TOKEN` | Built-in; pushes to GHCR |
+| `RENDER_DEPLOY_HOOK` | Render deploy hook URL (optional, for backend) |
+
+### Local public backend (Docker + ngrok)
+
+```bash
+# 1) Build & run the full backend stack
+docker compose up -d
+
+# 2) Expose the API gateway (port 3000) publicly via ngrok
+ngrok config add-authtoken <YOUR_NGROK_AUTHTOKEN>   # one-time
+./scripts/expose-backend.sh                          # or .ps1 on Windows
+```
+
+Point your Vercel `rewrites.destination` (in `frontend/vercel.json`) at the ngrok URL
+when running the backend locally instead of Render.
 
 ---
 

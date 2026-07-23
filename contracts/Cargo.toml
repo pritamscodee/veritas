@@ -4,6 +4,9 @@ members = [
     "identity_anchor",
     "vote_circuit",
     "tally_contract",
+    "governance_token",
+    "treasury",
+    "staking",
 ]
 resolver = "2"
 

@@ -78,3 +78,16 @@ services:
         value: 3004
       - key: DATABASE_URL
         sync: false
+
+  # Stellar Service (Payments, Tokenization, Ramp, DeFi, Anchors)
+  - type: web
+    name: veritas-stellar-service
+    runtime: node
+    plan: free
+    buildCommand: cd services/stellar-service && npm install && npm run build
+    startCommand: cd services/stellar-service && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3005

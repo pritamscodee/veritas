@@ -16,6 +16,7 @@ const SERVICE_URLS = {
   IDENTITY: process.env.IDENTITY_SERVICE_URL || DEFAULT_SERVICE_URLS.IDENTITY,
   ZK_PROOF: process.env.ZK_PROOF_SERVICE_URL || DEFAULT_SERVICE_URLS.ZK_PROOF,
   TALLY: process.env.TALLY_SERVICE_URL || DEFAULT_SERVICE_URLS.TALLY,
+  STELLAR: process.env.STELLAR_SERVICE_URL || DEFAULT_SERVICE_URLS.STELLAR,
 };
 
 // --- Middleware ---
@@ -93,14 +94,38 @@ const tallyProxyOptions: Options = {
   },
 };
 
+const stellarProxyOptions: Options = {
+  target: SERVICE_URLS.STELLAR,
+  changeOrigin: true,
+  pathRewrite: {
+    "^/api/payments": "/payments",
+    "^/api/assets": "/assets",
+    "^/api/ramp": "/ramp",
+    "^/api/defi": "/defi",
+    "^/api/anchors": "/anchors",
+  },
+  onError: (_err, _req, res) => {
+    (res as express.Response).status(502).json({
+      code: "SERVICE_UNAVAILABLE",
+      message: "Stellar service is down",
+    });
+  },
+};
+
 app.use("/api/elections", createProxyMiddleware(electionProxyOptions));
 app.use("/api/identity", createProxyMiddleware(identityProxyOptions));
 app.use("/api/zk-proof", createProxyMiddleware(zkProofProxyOptions));
 app.use("/api/tally", createProxyMiddleware(tallyProxyOptions));
+app.use("/api/stellar", createProxyMiddleware(stellarProxyOptions));
+app.use("/api/payments", createProxyMiddleware(stellarProxyOptions));
+app.use("/api/assets", createProxyMiddleware(stellarProxyOptions));
+app.use("/api/ramp", createProxyMiddleware(stellarProxyOptions));
+app.use("/api/defi", createProxyMiddleware(stellarProxyOptions));
+app.use("/api/anchors", createProxyMiddleware(stellarProxyOptions));
 
 // --- Aggregated health endpoint ---
 app.get("/api/health", async (_req, res) => {
-  const services = ["ELECTION", "IDENTITY", "ZK_PROOF", "TALLY"] as const;
+  const services = ["ELECTION", "IDENTITY", "ZK_PROOF", "TALLY", "STELLAR"] as const;
   const checks = await Promise.allSettled(
     services.map(async (name) => {
       const url = SERVICE_URLS[name];

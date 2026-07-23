@@ -123,3 +123,68 @@ export const healthApi = {
   gateway: () => request<ServiceHealth>("/health"),
   aggregated: () => request<ServiceHealth>("/health"),
 };
+
+// --- Stellar Payments ---
+export const paymentsApi = {
+  balance: (account: string) =>
+    request<{ account: string; balance: string }>(`/payments/balance?account=${account}`),
+  history: (account: string, limit = 20) =>
+    request<{ account: string; payments: any[] }>(`/payments/history?account=${account}&limit=${limit}`),
+  send: (data: { secret: string; destination: string; amount: string; asset?: string; memo?: string }) =>
+    request<any>("/payments/send", { method: "POST", body: JSON.stringify(data) }),
+  electionFee: (data: { secret: string; destination: string; electionId: string; amount?: string }) =>
+    request<any>("/payments/election-fee", { method: "POST", body: JSON.stringify(data) }),
+};
+
+// --- Stellar Asset Tokenization ---
+export const assetsApi = {
+  list: () => request<{ assets: any[] }>("/assets"),
+  tokenize: (data: { secret: string; code: string; limit?: string }) =>
+    request<any>("/assets/tokenize", { method: "POST", body: JSON.stringify(data) }),
+  mint: (contract: string, data: { adminSecret: string; to: string; amount: string }) =>
+    request<any>(`/assets/${contract}/mint`, { method: "POST", body: JSON.stringify(data) }),
+};
+
+// --- Stellar On/Off Ramp ---
+export const rampApi = {
+  anchors: () => request<{ anchors: any[] }>("/ramp/anchors"),
+  quote: (data: {
+    provider: string;
+    direction: "deposit" | "withdraw";
+    assetCode: string;
+    amount: string;
+    accountId: string;
+    language?: string;
+  }) => request<any>("/ramp/quote", { method: "POST", body: JSON.stringify(data) }),
+};
+
+// --- Stellar DeFi (staking / conviction) ---
+export const defiApi = {
+  stake: (data: {
+    secret: string;
+    stakingContract: string;
+    tokenContract: string;
+    amount: string;
+    lockSeconds: number;
+  }) => request<any>("/defi/stake", { method: "POST", body: JSON.stringify(data) }),
+  unstake: (data: { secret: string; stakingContract: string }) =>
+    request<any>("/defi/unstake", { method: "POST", body: JSON.stringify(data) }),
+  power: (account?: string, staked?: string, lockSeconds?: number) => {
+    const q = new URLSearchParams();
+    if (account) q.set("account", account);
+    if (staked) q.set("staked", staked);
+    if (lockSeconds) q.set("lockSeconds", String(lockSeconds));
+    return request<any>(`/defi/power?${q}`);
+  },
+};
+
+// --- Stellar Anchors ---
+export const anchorsApi = {
+  list: () => request<any>("/anchors"),
+  toml: (homeDomain: string, signingKey: string) =>
+    request<{ url: string }>(`/anchors/toml?homeDomain=${homeDomain}&signingKey=${signingKey}`),
+  trust: (data: { secret: string; anchorSigningKey: string; weight?: number }) =>
+    request<any>("/anchors/trust", { method: "POST", body: JSON.stringify(data) }),
+  verify: (data: { accountId: string; anchor: string; expiresAt: number }) =>
+    request<any>("/anchors/verify", { method: "POST", body: JSON.stringify(data) }),
+};
