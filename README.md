@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
-  <img src="https://img.shields.io/badge/Veritas-Governance_That_Can't_Be_Bought-7b2cbf?style=for-the-badge&labelColor=0D1117&color=7b2cbf" alt="Veritas Badge"/>
+ <img width="1907" height="912" alt="image" src="https://github.com/user-attachments/assets/f4088cf8-d22f-4cdc-b3eb-8c0fe2b67f43" />
+
   <br>
   <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" alt="Stellar Network" width="100%" style="max-width:1100px;border-radius:16px;margin:20px 0"/>
   <br>
