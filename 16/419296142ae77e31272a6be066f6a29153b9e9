@@ -1,0 +1,21 @@
+shared/constants/index.ts
+  s_13f3e75b576736::t_82b6ff3950fdd7 10-13,17-19,56,61-62,64-87
+shared/stellar/index.ts
+  s_13f3e75b576736::t_1e95e79deaff49 4-10,12-22,24-26,31,62-63,84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "16419296142ae77e31272a6be066f6a29153b9e9",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
