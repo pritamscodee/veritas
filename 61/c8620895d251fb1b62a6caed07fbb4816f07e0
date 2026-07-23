@@ -1,0 +1,23 @@
+services/api-gateway/src/index.ts
+  s_13f3e75b576736::t_641e847a052ce5 8,14
+services/tally-service/src/services/threshold-decryption.ts
+  s_13f3e75b576736::t_ddf19af0d4bcfd 2-4
+package.json
+  s_13f3e75b576736::t_2d798982bac212 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "61c8620895d251fb1b62a6caed07fbb4816f07e0",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
