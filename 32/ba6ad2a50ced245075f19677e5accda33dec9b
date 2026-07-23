@@ -1,0 +1,19 @@
+README.md
+  s_0a01ec323f160d::t_abbe367b07252f 32,40,51,69-294,296,298-300,302-307,309,311-350,363,367,369,371,373,377,390,399,401,403-406,408,428-430,436,442,444,459-461,463,465-468,470,474,476,478,480,483-485,490,493,495-496,501-513,520,524
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "32ba6ad2a50ced245075f19677e5accda33dec9b",
+  "prompts": {},
+  "sessions": {
+    "s_0a01ec323f160d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07195004bffesRrRP5mUopXtgD",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
