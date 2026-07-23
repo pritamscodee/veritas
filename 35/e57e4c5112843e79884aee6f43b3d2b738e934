@@ -1,0 +1,21 @@
+shared/constants/tsconfig.json
+  s_13f3e75b576736::t_74d236e437ba2f 6
+shared/stellar/tsconfig.json
+  s_13f3e75b576736::t_7183e984bb8e61 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "35e57e4c5112843e79884aee6f43b3d2b738e934",
+  "prompts": {},
+  "sessions": {
+    "s_13f3e75b576736": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0723ddcfcffe3gb7E66IntedDG",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
